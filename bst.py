@@ -18,10 +18,9 @@ class TreeNode:
 @dataclass
 class Tree:
     sequence: Iterator[Image.Image]
-    root: TreeNode = field(init=False)
+    root: TreeNode = None
 
     def __post_init__(self):
-        self.root = None
         for image in self.sequence:
             self.insert(image, self.root)
 

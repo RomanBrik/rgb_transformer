@@ -66,7 +66,7 @@ def generate_images() -> None:
     progress_bar = window["Progress Bar"]
     pictures_number = None
     while True:
-        pool = multiprocessing.Pool(processes=5)
+        pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
 
         event, values = window.read(timeout=100)
         if event == "Execute Process":
